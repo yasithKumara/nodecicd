@@ -37,11 +37,13 @@ app.get('/',(req,res)=>{
     app.post('/create',(req,res)=>{
         const name = req.body.name;
         const password = req.body.password;
+        const imageurl = req.body.imageurl;
     
         console.log(name);
     
         //db.query("INSERT INTO users (name,password) VALUES (?,?)",[name,password],
-        db.query("INSERT INTO user (name,password) VALUES (?,?)",[name,password],
+        // db.query("INSERT INTO user (name,password) VALUES (?,?)",[name,password],
+        db.query("INSERT INTO user (name,password,imageurl) VALUES (?,?)",[name,password,imageurl],
         (err,result) =>{
             if(err){
                 console.log(err);
