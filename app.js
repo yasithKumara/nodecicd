@@ -56,7 +56,7 @@ app.get('/',(req,res)=>{
         const name = req.body.name;
         const password = req.body.password;
     
-        db.query("SELECT * from users where name = ? AND password = ?",[name,password],
+        db.query("SELECT * from user where name = ? AND password = ?",[name,password],
         (err,result) =>{
             if(err){
                 res.send({err: err});
